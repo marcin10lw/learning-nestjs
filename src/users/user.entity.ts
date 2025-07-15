@@ -1,4 +1,5 @@
 import { Logger } from '@nestjs/common';
+import { Exclude } from 'class-transformer';
 import {
   Entity,
   Column,

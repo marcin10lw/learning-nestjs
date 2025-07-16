@@ -4,8 +4,9 @@ import { ReportsModule } from './reports/reports.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './users/user.entity';
-import { Report } from './reports/reports.entity';
+import { User } from './database/entities/user.entity';
+import { Report } from './database/entities/reports.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { Report } from './reports/reports.entity';
       entities: [User, Report],
       synchronize: true,
     }),
+    AuthModule,
     UsersModule,
     ReportsModule,
   ],
